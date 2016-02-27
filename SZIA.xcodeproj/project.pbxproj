@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C48AD8011C825843000A39D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8001C825843000A39D4 /* AppDelegate.swift */; };
+		C48AD8031C825843000A39D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8021C825843000A39D4 /* ViewController.swift */; };
+		C48AD8061C825843000A39D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48AD8041C825843000A39D4 /* Main.storyboard */; };
+		C48AD8081C825843000A39D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48AD8071C825843000A39D4 /* Assets.xcassets */; };
+		C48AD80B1C825843000A39D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48AD8091C825843000A39D4 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C48AD7FD1C825843000A39D4 /* SZIA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZIA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48AD8001C825843000A39D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C48AD8021C825843000A39D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C48AD8051C825843000A39D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C48AD8071C825843000A39D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C48AD80A1C825843000A39D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C48AD80C1C825843000A39D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C48AD7FA1C825843000A39D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C48AD7F41C825843000A39D4 = {
+			isa = PBXGroup;
+			children = (
+				C48AD7FF1C825843000A39D4 /* SZIA */,
+				C48AD7FE1C825843000A39D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C48AD7FE1C825843000A39D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C48AD7FD1C825843000A39D4 /* SZIA.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C48AD7FF1C825843000A39D4 /* SZIA */ = {
+			isa = PBXGroup;
+			children = (
+				C48AD8001C825843000A39D4 /* AppDelegate.swift */,
+				C48AD8021C825843000A39D4 /* ViewController.swift */,
+				C48AD8041C825843000A39D4 /* Main.storyboard */,
+				C48AD8071C825843000A39D4 /* Assets.xcassets */,
+				C48AD8091C825843000A39D4 /* LaunchScreen.storyboard */,
+				C48AD80C1C825843000A39D4 /* Info.plist */,
+			);
+			path = SZIA;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C48AD7FC1C825843000A39D4 /* SZIA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C48AD80F1C825843000A39D4 /* Build configuration list for PBXNativeTarget "SZIA" */;
+			buildPhases = (
+				C48AD7F91C825843000A39D4 /* Sources */,
+				C48AD7FA1C825843000A39D4 /* Frameworks */,
+				C48AD7FB1C825843000A39D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SZIA;
+			productName = SZIA;
+			productReference = C48AD7FD1C825843000A39D4 /* SZIA.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C48AD7F51C825843000A39D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Székely Ádám";
+				TargetAttributes = {
+					C48AD7FC1C825843000A39D4 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = C48AD7F81C825843000A39D4 /* Build configuration list for PBXProject "SZIA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C48AD7F41C825843000A39D4;
+			productRefGroup = C48AD7FE1C825843000A39D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C48AD7FC1C825843000A39D4 /* SZIA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C48AD7FB1C825843000A39D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48AD80B1C825843000A39D4 /* LaunchScreen.storyboard in Resources */,
+				C48AD8081C825843000A39D4 /* Assets.xcassets in Resources */,
+				C48AD8061C825843000A39D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C48AD7F91C825843000A39D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48AD8031C825843000A39D4 /* ViewController.swift in Sources */,
+				C48AD8011C825843000A39D4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C48AD8041C825843000A39D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C48AD8051C825843000A39D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C48AD8091C825843000A39D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C48AD80A1C825843000A39D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C48AD80D1C825843000A39D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C48AD80E1C825843000A39D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C48AD8101C825843000A39D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SZIA/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.szekelyadam.SZIA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C48AD8111C825843000A39D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SZIA/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.szekelyadam.SZIA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C48AD7F81C825843000A39D4 /* Build configuration list for PBXProject "SZIA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C48AD80D1C825843000A39D4 /* Debug */,
+				C48AD80E1C825843000A39D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C48AD80F1C825843000A39D4 /* Build configuration list for PBXNativeTarget "SZIA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C48AD8101C825843000A39D4 /* Debug */,
+				C48AD8111C825843000A39D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C48AD7F51C825843000A39D4 /* Project object */;
+}
