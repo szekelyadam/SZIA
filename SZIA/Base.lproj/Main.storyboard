@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qcu-2K-XnN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9co-v1-Cds">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="HPd-o5-10m">
+        <!--Induló járatok-->
+        <scene sceneID="tAv-aI-g7K">
             <objects>
-                <navigationController id="Qcu-2K-XnN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s4H-uk-cWH">
+                <navigationController id="nuo-XF-Dot" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Induló járatok" id="t9a-zD-Usp"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DT4-SO-7HI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="RXS-DP-eAH" kind="relationship" relationship="rootViewController" id="6Ky-sI-3Kq"/>
+                        <segue destination="RXS-DP-eAH" kind="relationship" relationship="rootViewController" id="CjL-pd-eWJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w2P-ys-6U8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0U-re-a74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="233"/>
+            <point key="canvasLocation" x="772.5" y="233"/>
         </scene>
         <!--Induló járatok-->
         <scene sceneID="c2g-2U-rdz">
@@ -46,7 +47,7 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontos indulás és kapuzárás" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BR-4E-w3E">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="departTimeLabel"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="timeLabel"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -103,9 +104,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="airlineImageView" destination="Xfk-ov-Ur4" id="nD1-E7-774"/>
-                                    <outlet property="departTimeLabel" destination="7BR-4E-w3E" id="ABd-gH-2Ch"/>
                                     <outlet property="flightNumberLabel" destination="Lbc-tP-YdL" id="RrL-wH-2WU"/>
                                     <outlet property="infosLabel" destination="UOa-Hk-y8A" id="M5Q-kl-tVv"/>
+                                    <outlet property="timeLabel" destination="7BR-4E-w3E" id="WSF-cU-Bj1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -114,11 +115,147 @@
                             <outlet property="delegate" destination="RXS-DP-eAH" id="m2t-KI-XVu"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Induló járatok" id="4i6-QE-vha"/>
                     <navigationItem key="navigationItem" title="Induló járatok" id="yfU-JW-Oqv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vTh-9L-Adp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="233"/>
+            <point key="canvasLocation" x="1546.5" y="233"/>
+        </scene>
+        <!--Érkező járatok-->
+        <scene sceneID="MWR-Gz-1YZ">
+            <objects>
+                <navigationController id="4TA-SQ-ROs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Érkező járatok" id="4Nu-y6-5Y8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BHc-oC-u8F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VoR-AQ-V5F" kind="relationship" relationship="rootViewController" id="Fuj-fh-Clr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rd-qV-21A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772.5" y="1016"/>
+        </scene>
+        <!--Érkező járatok-->
+        <scene sceneID="ral-7E-hVf">
+            <objects>
+                <tableViewController title="Érkező járatok" id="VoR-AQ-V5F" customClass="ArrivalsViewController" customModule="SZIA" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jtv-GB-ZaA">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArrivalsTableViewCell" rowHeight="81" id="2E8-lf-Dn1" customClass="FlightCell" customModule="SZIA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2E8-lf-Dn1" id="KnZ-Ad-7k9">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3bp-CP-20J">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="airlineImageView"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontos érkezés és kapuzárás" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeW-Fc-KeV">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="timeLabel"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="89" y="28" width="228" height="26"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Egyéb információ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjJ-9A-OIl">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="infosLabel"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="89" y="52" width="228" height="21"/>
+                                            </variation>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBu-j2-TKi">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <state key="normal" title="Kedvenc"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="333" y="24" width="59" height="30"/>
+                                            </variation>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Járat neve és száma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-ne-Q40">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="flightNumberLabel"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="89" y="8" width="228" height="21"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="3bp-CP-20J"/>
+                                            <exclude reference="aeW-Fc-KeV"/>
+                                            <exclude reference="IjJ-9A-OIl"/>
+                                            <exclude reference="fBu-j2-TKi"/>
+                                            <exclude reference="4z1-ne-Q40"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="3bp-CP-20J"/>
+                                            <include reference="aeW-Fc-KeV"/>
+                                            <include reference="IjJ-9A-OIl"/>
+                                            <include reference="fBu-j2-TKi"/>
+                                            <include reference="4z1-ne-Q40"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="ArrivalsTableViewCell"/>
+                                <connections>
+                                    <outlet property="airlineImageView" destination="3bp-CP-20J" id="XVK-fl-Zxn"/>
+                                    <outlet property="flightNumberLabel" destination="4z1-ne-Q40" id="o8N-gt-MOc"/>
+                                    <outlet property="infosLabel" destination="IjJ-9A-OIl" id="EVr-vN-DMR"/>
+                                    <outlet property="timeLabel" destination="aeW-Fc-KeV" id="MVN-Kx-1px"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VoR-AQ-V5F" id="WRE-XY-U34"/>
+                            <outlet property="delegate" destination="VoR-AQ-V5F" id="XnF-br-hDN"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Érkező járatok" id="htQ-i3-aE1"/>
+                    <navigationItem key="navigationItem" title="Érkező járatok" id="4Ka-NZ-sU7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="row-uj-2BC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1546.5" y="1016"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4eX-S8-hyt">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9co-v1-Cds" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="rGC-zU-Cco">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nuo-XF-Dot" kind="relationship" relationship="viewControllers" id="4mY-jt-iz0"/>
+                        <segue destination="4TA-SQ-ROs" kind="relationship" relationship="viewControllers" id="UhC-jr-Sgh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OdM-BK-iCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="233"/>
         </scene>
     </scenes>
 </document>

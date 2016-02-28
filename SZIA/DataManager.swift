@@ -12,6 +12,7 @@ class DataManager: NSObject {
     
     var airlines: [Airline]
     var departures: [Flight]
+    var arrivals: [Flight]
     
     override init() {
         // Init mock data
@@ -28,6 +29,13 @@ class DataManager: NSObject {
         airlines = [Airline]()
         airlines.append(a1)
         airlines.append(a2)
+        
+        let ar1 = Flight(flightNumber: "LY 8046", departure: "Heatrow Airport", arrival: "South Zubogy International Airport", departureCity: "London", departureCode: "LHR", arrivalCity: "South Zubogy", arrivalCode: "SZU", departureTime: "2016-02-27T22:42:00.000Z", arrivalTime: "2016-02-28T01:02:00.000Z", status: "Boarding", checkinDeskNumber: 17, gateNumber: 22, delay: 0, comment: "WizzAir", id: 1, airlineId: 1)
+        let ar2 = Flight(flightNumber: "LY 8045", departure: "Heatrow Airport", arrival: "South Zubogy International Airport", departureCity: "London", departureCode: "LHR", arrivalCity: "South Zubogy", arrivalCode: "SZU", departureTime: "2016-02-27T22:42:00.000Z", arrivalTime: "2016-02-28T01:02:00.000Z", status: "Boarding", checkinDeskNumber: 17, gateNumber: 22, delay: 0, comment: "British Airways", id: 1, airlineId: 2)
+        
+        arrivals = [Flight]()
+        arrivals.append(ar1)
+        arrivals.append(ar2)
         
         super.init()
     }

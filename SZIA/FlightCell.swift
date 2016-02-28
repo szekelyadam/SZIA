@@ -12,7 +12,7 @@ class FlightCell: UITableViewCell {
     
     @IBOutlet var airlineImageView: UIImageView!
     @IBOutlet var flightNumberLabel: UILabel!
-    @IBOutlet var departTimeLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
     @IBOutlet var infosLabel: UILabel!
 
     override func awakeFromNib() {

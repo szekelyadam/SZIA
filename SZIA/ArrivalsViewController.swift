@@ -1,5 +1,5 @@
 //
-//  DeparturesViewController.swift
+//  ArrivalsViewController.swift
 //  SZIA
 //
 //  Created by Ádibádi on 28/02/16.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DeparturesViewController: UITableViewController {
+class ArrivalsViewController: UITableViewController {
     
-    var dataManager : DataManager?
+    var dataManager: DataManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,21 +30,21 @@ class DeparturesViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager!.departures.count
+        return dataManager!.arrivals.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: FlightCell = tableView.dequeueReusableCellWithIdentifier("DeparturesTableViewCell", forIndexPath: indexPath) as! FlightCell
-    
-        let departureData = dataManager!.departures[indexPath.row] as Flight
+        let cell: FlightCell = tableView.dequeueReusableCellWithIdentifier("ArrivalsTableViewCell", forIndexPath: indexPath) as! FlightCell
+        
+        let arrivalData = dataManager!.arrivals[indexPath.row] as Flight
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         
-        cell.flightNumberLabel.text = "\(departureData.departureCode) -> \(departureData.arrivalCode) - \(departureData.flightNumber)"
-        cell.timeLabel.text = dateFormatter.stringFromDate(departureData.departureTime!)
-        cell.infosLabel.text = departureData.comment
-        cell.airlineImageView.image = departureData.getAirline()!.logo!
+        cell.flightNumberLabel.text = "\(arrivalData.departureCode) -> \(arrivalData.arrivalCode) - \(arrivalData.flightNumber)"
+        cell.timeLabel.text = dateFormatter.stringFromDate(arrivalData.arrivalTime!)
+        cell.infosLabel.text = arrivalData.comment
+        cell.airlineImageView.image = arrivalData.getAirline()!.logo!
         
         return cell
     }
