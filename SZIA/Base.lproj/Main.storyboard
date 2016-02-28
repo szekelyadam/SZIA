@@ -116,7 +116,16 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Induló járatok" id="4i6-QE-vha"/>
-                    <navigationItem key="navigationItem" title="Induló járatok" id="yfU-JW-Oqv"/>
+                    <navigationItem key="navigationItem" title="Induló járatok" id="yfU-JW-Oqv">
+                        <barButtonItem key="rightBarButtonItem" width="82" style="plain" id="L0o-RB-Jl9">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZiC-uh-ii6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Frissítés"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vTh-9L-Adp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,7 +242,16 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Érkező járatok" id="htQ-i3-aE1"/>
-                    <navigationItem key="navigationItem" title="Érkező járatok" id="4Ka-NZ-sU7"/>
+                    <navigationItem key="navigationItem" title="Érkező járatok" id="4Ka-NZ-sU7">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Q0l-Ay-69d">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Giy-mA-5Dp">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Frissítés"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="row-uj-2BC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -305,6 +323,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRG-l5-0fS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1702.5" y="1763"/>
+        </scene>
+        <!--Térkép-->
+        <scene sceneID="R6l-Md-eeo">
+            <objects>
+                <navigationController id="gRi-QU-eE4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Térkép" id="TDx-ca-whm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NYO-jP-F7R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YFb-cy-KYa" kind="relationship" relationship="rootViewController" id="N4n-2i-b99"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9q8-8N-QqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775.5" y="2495"/>
+        </scene>
+        <!--Zubony térképe-->
+        <scene sceneID="tab-D4-Ysy">
+            <objects>
+                <viewController id="YFb-cy-KYa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nvz-fv-2gV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q8C-iT-9vb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Ge-Me-N4a">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Zubony térképe" id="VoY-oD-efT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O3T-fm-nbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1702.5" y="2500"/>
+        </scene>
+        <!--Panasz-->
+        <scene sceneID="Kx3-De-TcX">
+            <objects>
+                <navigationController id="IPj-Gz-s1j" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Panasz" id="LVm-pG-5IQ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bct-Us-yCU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kdg-fK-qU4" kind="relationship" relationship="rootViewController" id="uNo-X3-Hky"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Gt-aH-clj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772.5" y="3298"/>
+        </scene>
+        <!--Panasz bejelentés-->
+        <scene sceneID="nV3-tZ-uX1">
+            <objects>
+                <viewController id="Kdg-fK-qU4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5qk-8a-4f7"/>
+                        <viewControllerLayoutGuide type="bottom" id="bDJ-Ig-uHH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jSc-Nh-Z4L">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Panasz bejelentés" id="Ccx-yZ-klN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sen-Is-lTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1702.5" y="3298"/>
         </scene>
         <!--News Details View Controller-->
         <scene sceneID="r0U-oc-inu">
@@ -386,6 +474,8 @@
                         <segue destination="nuo-XF-Dot" kind="relationship" relationship="viewControllers" id="4mY-jt-iz0"/>
                         <segue destination="4TA-SQ-ROs" kind="relationship" relationship="viewControllers" id="UhC-jr-Sgh"/>
                         <segue destination="byL-i4-gxZ" kind="relationship" relationship="viewControllers" id="gX2-sT-Lqq"/>
+                        <segue destination="gRi-QU-eE4" kind="relationship" relationship="viewControllers" id="mxi-Tn-o0B"/>
+                        <segue destination="IPj-Gz-s1j" kind="relationship" relationship="viewControllers" id="ZuB-lH-vhL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OdM-BK-iCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
