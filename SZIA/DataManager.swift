@@ -13,6 +13,7 @@ class DataManager: NSObject {
     var airlines: [Airline]
     var departures: [Flight]
     var arrivals: [Flight]
+    var news: [News]
     
     override init() {
         // Init mock data
@@ -36,6 +37,13 @@ class DataManager: NSObject {
         arrivals = [Flight]()
         arrivals.append(ar1)
         arrivals.append(ar2)
+        
+        let n1 = News(date: "2016-02-10T10:01:12.000Z", title: "Nagyon menő a repülőtér", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        let n2 = News(date: "2016-02-11T13:01:12.000Z", title: "Rendkívül király a repülőtér", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        
+        news = [News]()
+        news.append(n1)
+        news.append(n2)
         
         super.init()
     }

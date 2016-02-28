@@ -18,7 +18,7 @@ class News: NSObject {
         self.content = content
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         self.date = dateFormatter.dateFromString(date)
     }
 }
