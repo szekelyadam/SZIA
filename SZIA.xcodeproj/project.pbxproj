@@ -12,6 +12,15 @@
 		C48AD8061C825843000A39D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48AD8041C825843000A39D4 /* Main.storyboard */; };
 		C48AD8081C825843000A39D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48AD8071C825843000A39D4 /* Assets.xcassets */; };
 		C48AD80B1C825843000A39D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48AD8091C825843000A39D4 /* LaunchScreen.storyboard */; };
+		C48AD8161C825C22000A39D4 /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8151C825C22000A39D4 /* Airline.swift */; };
+		C48AD8181C825DD2000A39D4 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8171C825DD2000A39D4 /* News.swift */; };
+		C48AD81B1C825F32000A39D4 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD81A1C825F32000A39D4 /* Flight.swift */; };
+		C48AD81D1C826288000A39D4 /* Complaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD81C1C826288000A39D4 /* Complaint.swift */; };
+		C48AD8211C8266EC000A39D4 /* DeparturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8201C8266EC000A39D4 /* DeparturesViewController.swift */; };
+		C48AD8231C826C2B000A39D4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8221C826C2B000A39D4 /* DataManager.swift */; };
+		C48AD8251C831BA0000A39D4 /* FlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8241C831BA0000A39D4 /* FlightCell.swift */; };
+		C48AD82D1C8326FB000A39D4 /* british_airways.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C48AD82B1C8326FB000A39D4 /* british_airways.jpg */; };
+		C48AD82E1C8326FB000A39D4 /* wizzair.png in Resources */ = {isa = PBXBuildFile; fileRef = C48AD82C1C8326FB000A39D4 /* wizzair.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		C48AD8071C825843000A39D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C48AD80A1C825843000A39D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C48AD80C1C825843000A39D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C48AD8151C825C22000A39D4 /* Airline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
+		C48AD8171C825DD2000A39D4 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		C48AD81A1C825F32000A39D4 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		C48AD81C1C826288000A39D4 /* Complaint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Complaint.swift; sourceTree = "<group>"; };
+		C48AD8201C8266EC000A39D4 /* DeparturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesViewController.swift; sourceTree = "<group>"; };
+		C48AD8221C826C2B000A39D4 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C48AD8241C831BA0000A39D4 /* FlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightCell.swift; sourceTree = "<group>"; };
+		C48AD82B1C8326FB000A39D4 /* british_airways.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = british_airways.jpg; path = AirlineImages/british_airways.jpg; sourceTree = "<group>"; };
+		C48AD82C1C8326FB000A39D4 /* wizzair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizzair.png; path = AirlineImages/wizzair.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +72,31 @@
 		C48AD7FF1C825843000A39D4 /* SZIA */ = {
 			isa = PBXGroup;
 			children = (
+				C48AD8261C83245E000A39D4 /* AirlineImages */,
 				C48AD8001C825843000A39D4 /* AppDelegate.swift */,
 				C48AD8021C825843000A39D4 /* ViewController.swift */,
 				C48AD8041C825843000A39D4 /* Main.storyboard */,
 				C48AD8071C825843000A39D4 /* Assets.xcassets */,
 				C48AD8091C825843000A39D4 /* LaunchScreen.storyboard */,
 				C48AD80C1C825843000A39D4 /* Info.plist */,
+				C48AD8151C825C22000A39D4 /* Airline.swift */,
+				C48AD8171C825DD2000A39D4 /* News.swift */,
+				C48AD81A1C825F32000A39D4 /* Flight.swift */,
+				C48AD81C1C826288000A39D4 /* Complaint.swift */,
+				C48AD8201C8266EC000A39D4 /* DeparturesViewController.swift */,
+				C48AD8221C826C2B000A39D4 /* DataManager.swift */,
+				C48AD8241C831BA0000A39D4 /* FlightCell.swift */,
 			);
 			path = SZIA;
+			sourceTree = "<group>";
+		};
+		C48AD8261C83245E000A39D4 /* AirlineImages */ = {
+			isa = PBXGroup;
+			children = (
+				C48AD82B1C8326FB000A39D4 /* british_airways.jpg */,
+				C48AD82C1C8326FB000A39D4 /* wizzair.png */,
+			);
+			name = AirlineImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +157,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48AD82E1C8326FB000A39D4 /* wizzair.png in Resources */,
+				C48AD82D1C8326FB000A39D4 /* british_airways.jpg in Resources */,
 				C48AD80B1C825843000A39D4 /* LaunchScreen.storyboard in Resources */,
 				C48AD8081C825843000A39D4 /* Assets.xcassets in Resources */,
 				C48AD8061C825843000A39D4 /* Main.storyboard in Resources */,
@@ -135,7 +172,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48AD8161C825C22000A39D4 /* Airline.swift in Sources */,
+				C48AD8251C831BA0000A39D4 /* FlightCell.swift in Sources */,
+				C48AD8231C826C2B000A39D4 /* DataManager.swift in Sources */,
+				C48AD81D1C826288000A39D4 /* Complaint.swift in Sources */,
 				C48AD8031C825843000A39D4 /* ViewController.swift in Sources */,
+				C48AD8181C825DD2000A39D4 /* News.swift in Sources */,
+				C48AD81B1C825F32000A39D4 /* Flight.swift in Sources */,
+				C48AD8211C8266EC000A39D4 /* DeparturesViewController.swift in Sources */,
 				C48AD8011C825843000A39D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
