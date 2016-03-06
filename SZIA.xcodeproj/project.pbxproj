@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C46FA26D1C8CA6B0003CC541 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46FA26C1C8CA6B0003CC541 /* MapViewController.swift */; };
+		C46FA26F1C8CAA33003CC541 /* AirportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46FA26E1C8CAA33003CC541 /* AirportAnnotation.swift */; };
 		C48AD8011C825843000A39D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8001C825843000A39D4 /* AppDelegate.swift */; };
 		C48AD8031C825843000A39D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8021C825843000A39D4 /* ViewController.swift */; };
 		C48AD8061C825843000A39D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48AD8041C825843000A39D4 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C46FA26C1C8CA6B0003CC541 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C46FA26E1C8CAA33003CC541 /* AirportAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportAnnotation.swift; sourceTree = "<group>"; };
 		C48AD7FD1C825843000A39D4 /* SZIA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZIA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48AD8001C825843000A39D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C48AD8021C825843000A39D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				C48AD8311C832D78000A39D4 /* ArrivalsViewController.swift */,
 				C48AD8331C8333C4000A39D4 /* NewsViewController.swift */,
 				C48AD8351C833BED000A39D4 /* NewsDetailsViewController.swift */,
+				C46FA26C1C8CA6B0003CC541 /* MapViewController.swift */,
+				C46FA26E1C8CAA33003CC541 /* AirportAnnotation.swift */,
 			);
 			path = SZIA;
 			sourceTree = "<group>";
@@ -185,8 +191,10 @@
 				C48AD8161C825C22000A39D4 /* Airline.swift in Sources */,
 				C48AD8251C831BA0000A39D4 /* FlightCell.swift in Sources */,
 				C48AD8231C826C2B000A39D4 /* DataManager.swift in Sources */,
+				C46FA26F1C8CAA33003CC541 /* AirportAnnotation.swift in Sources */,
 				C48AD81D1C826288000A39D4 /* Complaint.swift in Sources */,
 				C48AD8341C8333C4000A39D4 /* NewsViewController.swift in Sources */,
+				C46FA26D1C8CA6B0003CC541 /* MapViewController.swift in Sources */,
 				C48AD8321C832D78000A39D4 /* ArrivalsViewController.swift in Sources */,
 				C48AD8031C825843000A39D4 /* ViewController.swift in Sources */,
 				C48AD8181C825DD2000A39D4 /* News.swift in Sources */,
@@ -340,6 +348,7 @@
 				C48AD8111C825843000A39D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
