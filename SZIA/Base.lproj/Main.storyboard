@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Induló járatok-->
@@ -629,7 +630,7 @@
         <!--Panasz bejelentés-->
         <scene sceneID="nV3-tZ-uX1">
             <objects>
-                <viewController id="Kdg-fK-qU4" sceneMemberID="viewController">
+                <viewController id="Kdg-fK-qU4" customClass="ComplaintViewController" customModule="SZIA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5qk-8a-4f7"/>
                         <viewControllerLayoutGuide type="bottom" id="bDJ-Ig-uHH"/>
@@ -637,9 +638,129 @@
                     <view key="view" contentMode="scaleToFill" id="jSc-Nh-Z4L">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Panasztevő neve" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYN-kO-9jp">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="editingDidEndOnExit:" destination="Kdg-fK-qU4" eventType="editingDidEndOnExit" id="Ztw-pX-mfe"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Panasztevő e-mail címe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rk6-tf-N92">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="editingDidEndOnExit:" destination="Kdg-fK-qU4" eventType="editingDidEndOnExit" id="d2P-DL-Mvi"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Panasz tárgya" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZl-U8-2rt">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="editingDidEndOnExit:" destination="Kdg-fK-qU4" eventType="editingDidEndOnExit" id="m68-BR-NWF"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szh-R9-ylY">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Fénykép kiválasztása"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooa-Jx-7PJ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Panasz küldése"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Panasz leírása" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tEs-7z-e85">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84188253837719162" green="0.84188253837719162" blue="0.84162554824561397" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hZl-U8-2rt" firstAttribute="leading" secondItem="jSc-Nh-Z4L" secondAttribute="leadingMargin" id="9e5-pw-HHE"/>
+                            <constraint firstItem="TYN-kO-9jp" firstAttribute="top" secondItem="5qk-8a-4f7" secondAttribute="bottom" constant="15" id="AHs-sy-OYZ"/>
+                            <constraint firstItem="hZl-U8-2rt" firstAttribute="trailing" secondItem="jSc-Nh-Z4L" secondAttribute="trailingMargin" id="FwA-Cr-mFW"/>
+                            <constraint firstItem="hZl-U8-2rt" firstAttribute="top" secondItem="rk6-tf-N92" secondAttribute="bottom" constant="10" id="GUQ-DY-q2j"/>
+                            <constraint firstItem="rk6-tf-N92" firstAttribute="trailing" secondItem="jSc-Nh-Z4L" secondAttribute="trailingMargin" id="Npc-a8-L6X"/>
+                            <constraint firstItem="Ooa-Jx-7PJ" firstAttribute="top" secondItem="tEs-7z-e85" secondAttribute="bottom" constant="20" id="Vli-za-1g0"/>
+                            <constraint firstItem="tEs-7z-e85" firstAttribute="height" secondItem="jSc-Nh-Z4L" secondAttribute="height" multiplier="0.3" id="hVC-92-zlA"/>
+                            <constraint firstItem="Ooa-Jx-7PJ" firstAttribute="trailing" secondItem="jSc-Nh-Z4L" secondAttribute="trailingMargin" id="jYq-pN-7Pp"/>
+                            <constraint firstItem="szh-R9-ylY" firstAttribute="top" secondItem="tEs-7z-e85" secondAttribute="bottom" constant="20" id="ohB-g9-ZwW"/>
+                            <constraint firstItem="TYN-kO-9jp" firstAttribute="trailing" secondItem="jSc-Nh-Z4L" secondAttribute="trailingMargin" id="rWK-BR-KoB"/>
+                            <constraint firstItem="rk6-tf-N92" firstAttribute="leading" secondItem="jSc-Nh-Z4L" secondAttribute="leadingMargin" id="s5Y-sJ-qwi"/>
+                            <constraint firstItem="tEs-7z-e85" firstAttribute="trailing" secondItem="jSc-Nh-Z4L" secondAttribute="trailingMargin" id="svz-xv-hnJ"/>
+                            <constraint firstItem="TYN-kO-9jp" firstAttribute="leading" secondItem="jSc-Nh-Z4L" secondAttribute="leadingMargin" id="w1c-tS-CUC"/>
+                            <constraint firstItem="tEs-7z-e85" firstAttribute="leading" secondItem="jSc-Nh-Z4L" secondAttribute="leadingMargin" id="xbd-9K-YQE"/>
+                            <constraint firstItem="rk6-tf-N92" firstAttribute="top" secondItem="TYN-kO-9jp" secondAttribute="bottom" constant="10" id="y7O-dS-6u6"/>
+                            <constraint firstItem="tEs-7z-e85" firstAttribute="top" secondItem="hZl-U8-2rt" secondAttribute="bottom" constant="10" id="zM3-cL-Gcf"/>
+                            <constraint firstItem="szh-R9-ylY" firstAttribute="leading" secondItem="jSc-Nh-Z4L" secondAttribute="leadingMargin" id="zQ6-m0-ENh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="TYN-kO-9jp"/>
+                                <exclude reference="rk6-tf-N92"/>
+                                <exclude reference="hZl-U8-2rt"/>
+                                <exclude reference="szh-R9-ylY"/>
+                                <exclude reference="Ooa-Jx-7PJ"/>
+                                <exclude reference="tEs-7z-e85"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="AHs-sy-OYZ"/>
+                                <exclude reference="rWK-BR-KoB"/>
+                                <exclude reference="w1c-tS-CUC"/>
+                                <exclude reference="Npc-a8-L6X"/>
+                                <exclude reference="s5Y-sJ-qwi"/>
+                                <exclude reference="y7O-dS-6u6"/>
+                                <exclude reference="9e5-pw-HHE"/>
+                                <exclude reference="FwA-Cr-mFW"/>
+                                <exclude reference="GUQ-DY-q2j"/>
+                                <exclude reference="hVC-92-zlA"/>
+                                <exclude reference="svz-xv-hnJ"/>
+                                <exclude reference="xbd-9K-YQE"/>
+                                <exclude reference="zM3-cL-Gcf"/>
+                                <exclude reference="ohB-g9-ZwW"/>
+                                <exclude reference="zQ6-m0-ENh"/>
+                                <exclude reference="Vli-za-1g0"/>
+                                <exclude reference="jYq-pN-7Pp"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="TYN-kO-9jp"/>
+                                <include reference="rk6-tf-N92"/>
+                                <include reference="hZl-U8-2rt"/>
+                                <include reference="szh-R9-ylY"/>
+                                <include reference="Ooa-Jx-7PJ"/>
+                                <include reference="tEs-7z-e85"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="AHs-sy-OYZ"/>
+                                <include reference="rWK-BR-KoB"/>
+                                <include reference="w1c-tS-CUC"/>
+                                <include reference="Npc-a8-L6X"/>
+                                <include reference="s5Y-sJ-qwi"/>
+                                <include reference="y7O-dS-6u6"/>
+                                <include reference="9e5-pw-HHE"/>
+                                <include reference="FwA-Cr-mFW"/>
+                                <include reference="GUQ-DY-q2j"/>
+                                <include reference="hVC-92-zlA"/>
+                                <include reference="svz-xv-hnJ"/>
+                                <include reference="xbd-9K-YQE"/>
+                                <include reference="zM3-cL-Gcf"/>
+                                <include reference="ohB-g9-ZwW"/>
+                                <include reference="zQ6-m0-ENh"/>
+                                <include reference="Vli-za-1g0"/>
+                                <include reference="jYq-pN-7Pp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Panasz bejelentés" id="Ccx-yZ-klN"/>
+                    <connections>
+                        <outlet property="complaintContentTextView" destination="tEs-7z-e85" id="Kf4-uc-zCV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sen-Is-lTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
