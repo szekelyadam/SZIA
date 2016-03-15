@@ -10,6 +10,7 @@ import UIKit
 
 class ComplaintViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var complainantNameTopConstraint: NSLayoutConstraint!
     @IBAction func editingDidEndOnExit(sender: UITextField) {
         sender.resignFirstResponder()
     }
@@ -37,6 +38,38 @@ class ComplaintViewController: UIViewController, UITextViewDelegate {
         return true
     }
     
+    override func viewWillAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                
+                if (self.complaintContentTextView.frame.origin.y + self.complaintContentTextView.frame.size.height) > (self.view.frame.size.height - keyboardSize.height) {
+                    self.view.layoutIfNeeded()
+                    UIView.animateWithDuration(0.5, animations: {
+                        self.complainantNameTopConstraint.constant = -((self.complaintContentTextView.frame.origin.y + self.complaintContentTextView.frame.size.height) - (self.view.frame.size.height - keyboardSize.height))
+                        self.view.layoutIfNeeded()
+                    })
+                }
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
+            self.complainantNameTopConstraint.constant = 10
+            self.view.layoutIfNeeded()
+        })
+    }
 
     /*
     // MARK: - Navigation
