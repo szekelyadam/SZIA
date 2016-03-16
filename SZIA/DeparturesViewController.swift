@@ -10,12 +10,19 @@ import UIKit
 
 class DeparturesViewController: UITableViewController {
     
-    var dataManager : DataManager?
+    var departures = [Flight]()
+    var urlSession : NSURLSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dataManager = AppDelegate.sharedAppDelegate().dataManager
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        urlSession = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
+        self.loadDepartures()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        loadDepartures()
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,14 +36,18 @@ class DeparturesViewController: UITableViewController {
         return 1
     }
 
+    @IBAction func refreshButtonTap(sender: AnyObject) {
+        loadDepartures()
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager!.departures.count
+        return self.departures.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: FlightCell = tableView.dequeueReusableCellWithIdentifier("DeparturesTableViewCell", forIndexPath: indexPath) as! FlightCell
     
-        let departureData = dataManager!.departures[indexPath.row] as Flight
+        let departureData = departures[indexPath.row] as Flight
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -47,6 +58,32 @@ class DeparturesViewController: UITableViewController {
         cell.airlineImageView.image = departureData.getAirline()!.logo!
         
         return cell
+    }
+    
+    func loadDepartures() {
+        let url = NSURL(string: "http://szia-backend.herokuapp.com/api/flights")
+        let dataTask = urlSession.dataTaskWithURL(url!, completionHandler: {
+            data, response, error in
+            
+                do {
+                    self.departures.removeAll()
+                    guard let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!,
+                        options: NSJSONReadingOptions(rawValue: 0)) as? [AnyObject] else {
+                        return
+                    }
+                    for object in jsonArray {
+                        let d = object as! [NSObject: AnyObject]
+                        if d["departureCode"] as! String == "SZU" {
+                            let flight = Flight(flightNumber: d["flightNumber"] as! String, departure: d["departure"] as! String, arrival: d["arrival"] as! String, departureCity: d["departureCity"] as! String, departureCode: d["departureCode"] as! String, arrivalCity: d["arrivalCity"] as! String, arrivalCode: d["arrivalCode"] as! String, departureTime: d["departureTime"] as! String, arrivalTime: d["arrivalTime"] as! String, status: d["status"] as! String, checkinDeskNumber: d["checkinDeskNumber"] as! Int, gateNumber: d["gateNumber"] as! Int, delay: d["delay"] as! Int, comment: d["comment"] as! String, id: 1, airlineId: 1)
+                            self.departures.append(flight)
+                        }
+                    }
+                } catch {
+                    print("Error \(error)")
+                }
+            })
+        dataTask.resume()
+        self.tableView.reloadData()
     }
 
     /*
