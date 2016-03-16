@@ -10,14 +10,23 @@ import UIKit
 
 class ComplaintViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var complainantNameTextField: UITextField!
+    @IBOutlet weak var complainantEmailTextField: UITextField!
+    @IBOutlet weak var complaintSubjectTextField: UITextField!
     @IBOutlet weak var complainantNameTopConstraint: NSLayoutConstraint!
     @IBAction func editingDidEndOnExit(sender: UITextField) {
         sender.resignFirstResponder()
     }
     @IBOutlet weak var complaintContentTextView: UITextView!
+    
+    var urlSession: NSURLSession!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        urlSession = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
+        
         complaintContentTextView.delegate = self
     }
 
@@ -71,6 +80,49 @@ class ComplaintViewController: UIViewController, UITextViewDelegate {
         })
     }
 
+    @IBAction func sendComplaintButtonTouch(sender: AnyObject) {
+        var complaint = [NSObject: AnyObject]()
+        complaint["name"] = self.complainantNameTextField.text!
+        complaint["email"] = self.complainantEmailTextField.text!
+        complaint["subject"] = self.complaintSubjectTextField.text!
+        complaint["content"] = self.complaintContentTextView.text
+        
+        let jsonData: NSData!
+        do {
+            jsonData = try NSJSONSerialization.dataWithJSONObject(complaint, options: NSJSONWritingOptions(rawValue: 0))
+        } catch {
+            return
+        }
+        
+        let url = NSURL(string: "http://szia-backend.herokuapp.com/api/complaints")
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let postTask = urlSession.uploadTaskWithRequest(request, fromData: jsonData, completionHandler: { data, response, error in
+            
+            do {
+                guard let response = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)) as? [NSObject: AnyObject]
+                    else {
+                        return
+                }
+                
+                let result = response["result"] as? String
+                let alert = UIAlertController(title: "Panasz elküldése sikeres", message: result, preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                alert.addAction(okAction)
+                self.presentViewController(alert, animated: true, completion: {
+                    self.complainantNameTextField.text = ""
+                    self.complainantEmailTextField.text = ""
+                    self.complaintSubjectTextField.text = ""
+                    self.complaintContentTextView.text = ""
+                })
+            } catch {}
+        })
+        
+        postTask.resume()
+    }
+    
     /*
     // MARK: - Navigation
 
