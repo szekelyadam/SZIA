@@ -10,12 +10,19 @@ import UIKit
 
 class NewsViewController: UITableViewController {
     
-    var dataManager: DataManager?
+    var news = [News]()
+    var urlSession : NSURLSession!
 
     override func viewDidLoad() {
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        urlSession = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
+        self.loadNews()
         super.viewDidLoad()
-
-        dataManager = AppDelegate.sharedAppDelegate().dataManager
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.loadNews()
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,13 +37,13 @@ class NewsViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager!.news.count
+        return self.news.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("NewsTableViewCell", forIndexPath: indexPath) as UITableViewCell
         
-        let newsData = dataManager!.news[indexPath.row] as News
+        let newsData = self.news[indexPath.row] as News
         
         cell.textLabel!.text = newsData.title
         cell.detailTextLabel!.text = newsData.content
@@ -48,8 +55,32 @@ class NewsViewController: UITableViewController {
         if segue.identifier == "NewsDetailsSegue" {
             let vc = segue.destinationViewController as! NewsDetailsViewController
             let row = tableView.indexPathForSelectedRow?.row
-            vc.news = dataManager!.news[row!] as News
+            vc.news = self.news[row!] as News
         }
+    }
+    
+    func loadNews() {
+        let url = NSURL(string: "http://szia-backend.herokuapp.com/api/news")
+        let dataTask = urlSession.dataTaskWithURL(url!, completionHandler: {
+            data, response, error in
+            
+            do {
+                self.news.removeAll()
+                guard let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!,
+                    options: NSJSONReadingOptions(rawValue: 0)) as? [AnyObject] else {
+                        return
+                }
+                for object in jsonArray {
+                    let d = object as! [NSObject: AnyObject]
+                    let n = News(date: d["date"] as! String, title: d["title"] as! String, content: d["content"] as! String)
+                    self.news.append(n)
+                }
+            } catch {
+                print("Error \(error)")
+            }
+        })
+        dataTask.resume()
+        self.tableView.reloadData()
     }
 
     /*
