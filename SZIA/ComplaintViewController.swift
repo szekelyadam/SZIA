@@ -87,6 +87,14 @@ class ComplaintViewController: UIViewController, UITextViewDelegate {
         complaint["subject"] = self.complaintSubjectTextField.text!
         complaint["content"] = self.complaintContentTextView.text
         
+        if (complaint["name"] as! String == "") || (complaint["email"] as! String == "") || (complaint["subject"] as! String == "") || (complaint["content"] as! String == "") {
+            let alert = UIAlertController(title: "Kérjük minden adatot tölts ki", message: "", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            alert.addAction(okAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
         let jsonData: NSData!
         do {
             jsonData = try NSJSONSerialization.dataWithJSONObject(complaint, options: NSJSONWritingOptions(rawValue: 0))

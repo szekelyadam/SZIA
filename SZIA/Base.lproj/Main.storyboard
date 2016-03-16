@@ -460,7 +460,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Panasztevő e-mail címe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Mf-yQ-od6">
                                 <rect key="frame" x="20" y="112" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                 <connections>
                                     <action selector="editingDidEndOnExit:" destination="Kdg-fK-qU4" eventType="editingDidEndOnExit" id="npr-5b-gpl"/>
                                 </connections>
@@ -492,7 +492,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Panasztevő neve" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="usZ-14-8rz">
                                 <rect key="frame" x="20" y="72" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                 <connections>
                                     <action selector="editingDidEndOnExit:" destination="Kdg-fK-qU4" eventType="editingDidEndOnExit" id="GOM-qc-Eyi"/>
                                 </connections>
