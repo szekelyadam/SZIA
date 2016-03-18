@@ -65,6 +65,7 @@ class NewsViewController: UITableViewController {
             data, response, error in
             
             do {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = true
                 self.news.removeAll()
                 guard let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!,
                     options: NSJSONReadingOptions(rawValue: 0)) as? [AnyObject] else {
@@ -75,12 +76,13 @@ class NewsViewController: UITableViewController {
                     let n = News(date: d["date"] as! String, title: d["title"] as! String, content: d["content"] as! String)
                     self.news.append(n)
                 }
+                self.tableView.reloadData()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             } catch {
                 print("Error \(error)")
             }
         })
         dataTask.resume()
-        self.tableView.reloadData()
     }
 
     /*

@@ -401,7 +401,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k78-12-Jbf">
-                                <rect key="frame" x="20" y="64" width="560" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <connections>
                                     <outlet property="delegate" destination="YFb-cy-KYa" id="gBE-RT-0PS"/>
                                 </connections>
@@ -409,11 +409,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="k78-12-Jbf" secondAttribute="trailing" id="8BW-Mx-sSH"/>
-                            <constraint firstItem="k78-12-Jbf" firstAttribute="leading" secondItem="7Ge-Me-N4a" secondAttribute="leadingMargin" id="SRO-Jg-JAx"/>
-                            <constraint firstItem="Q8C-iT-9vb" firstAttribute="top" secondItem="k78-12-Jbf" secondAttribute="bottom" id="cYo-Ga-TDg"/>
-                            <constraint firstItem="k78-12-Jbf" firstAttribute="top" secondItem="Nvz-fv-2gV" secondAttribute="bottom" id="f3D-Xc-vxA"/>
+                            <constraint firstItem="k78-12-Jbf" firstAttribute="bottom" secondItem="Q8C-iT-9vb" secondAttribute="top" id="2A8-nP-T6B"/>
+                            <constraint firstItem="k78-12-Jbf" firstAttribute="leading" secondItem="7Ge-Me-N4a" secondAttribute="leading" id="7Lc-T4-Zvx"/>
+                            <constraint firstAttribute="trailing" secondItem="k78-12-Jbf" secondAttribute="trailing" id="8t1-Ia-JZN"/>
+                            <constraint firstAttribute="trailing" secondItem="k78-12-Jbf" secondAttribute="trailing" id="OUt-3J-T63"/>
+                            <constraint firstItem="k78-12-Jbf" firstAttribute="leading" secondItem="7Ge-Me-N4a" secondAttribute="leading" id="QeX-F3-fr8"/>
+                            <constraint firstItem="k78-12-Jbf" firstAttribute="top" secondItem="Nvz-fv-2gV" secondAttribute="bottom" id="g7j-oS-gUV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OUt-3J-T63"/>
+                                <exclude reference="QeX-F3-fr8"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Zubony térképe" id="VoY-oD-efT"/>
                     <connections>

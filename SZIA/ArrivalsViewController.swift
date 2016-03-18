@@ -62,6 +62,7 @@ class ArrivalsViewController: UITableViewController {
             data, response, error in
             
             do {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = true
                 self.arrivals.removeAll()
                 guard let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!,
                     options: NSJSONReadingOptions(rawValue: 0)) as? [AnyObject] else {
@@ -74,12 +75,13 @@ class ArrivalsViewController: UITableViewController {
                         self.arrivals.append(flight)
                     }
                 }
+                self.tableView.reloadData()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             } catch {
                         print("Error \(error)")
             }
             })
         dataTask.resume()
-        self.tableView.reloadData()
     }
 
     /*

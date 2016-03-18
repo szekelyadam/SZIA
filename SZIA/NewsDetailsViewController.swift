@@ -17,8 +17,6 @@ class NewsDetailsViewController: UIViewController {
     var news: News?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         if news != nil {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -29,6 +27,8 @@ class NewsDetailsViewController: UIViewController {
             
             navigationItem.title = news!.title
         }
+        
+        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
