@@ -39,14 +39,6 @@ class ComplaintViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
-    }
-    
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -58,15 +50,17 @@ class ComplaintViewController: UIViewController, UITextViewDelegate {
     
     func keyboardWillShow(notification: NSNotification) {
         
-        if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                
-                if (self.complaintContentTextView.frame.origin.y + self.complaintContentTextView.frame.size.height) > (self.view.frame.size.height - keyboardSize.height) {
-                    self.view.layoutIfNeeded()
-                    UIView.animateWithDuration(0.5, animations: {
-                        self.complainantNameTopConstraint.constant = -((self.complaintContentTextView.frame.origin.y + self.complaintContentTextView.frame.size.height) - (self.view.frame.size.height - keyboardSize.height))
+        if complaintContentTextView.isFirstResponder() {
+            if let userInfo = notification.userInfo {
+                if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                    
+                    if (self.complaintContentTextView.frame.origin.y + self.complaintContentTextView.frame.size.height) > (self.view.frame.size.height - keyboardSize.height) {
                         self.view.layoutIfNeeded()
-                    })
+                        UIView.animateWithDuration(0.5, animations: {
+                            self.complainantNameTopConstraint.constant = -((self.complaintContentTextView.frame.origin.y + self.complaintContentTextView.frame.size.height) - (self.view.frame.size.height - keyboardSize.height))
+                            self.view.layoutIfNeeded()
+                        })
+                    }
                 }
             }
         }
