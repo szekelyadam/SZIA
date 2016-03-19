@@ -60,12 +60,12 @@ class NewsViewController: UITableViewController {
     }
     
     func loadNews() {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         let url = NSURL(string: "http://szia-backend.herokuapp.com/api/news")
         let dataTask = urlSession.dataTaskWithURL(url!, completionHandler: {
             data, response, error in
             
             do {
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = true
                 self.news.removeAll()
                 guard let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!,
                     options: NSJSONReadingOptions(rawValue: 0)) as? [AnyObject] else {

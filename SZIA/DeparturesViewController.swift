@@ -61,12 +61,12 @@ class DeparturesViewController: UITableViewController {
     }
     
     func loadDepartures() {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         let url = NSURL(string: "http://szia-backend.herokuapp.com/api/flights")
         let dataTask = urlSession.dataTaskWithURL(url!, completionHandler: {
             data, response, error in
             
                 do {
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
                     self.departures.removeAll()
                     guard let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!,
                         options: NSJSONReadingOptions(rawValue: 0)) as? [AnyObject] else {
