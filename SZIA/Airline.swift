@@ -9,13 +9,19 @@
 import UIKit
 
 class Airline: NSObject {
-    var name: String
-    var logo: UIImage?
     var id: Int
+    var name: String
+    var imageURL: String
+    var image: UIImage?
+    var airlineCode: String
     
-    init(name: String, logo: UIImage?, id: Int) {
-        self.name = name
-        self.logo = logo!
+    init(id: Int, name: String, imageURL: String, airlineCode: String) {
         self.id = id
+        self.name = name
+        self.imageURL = imageURL
+        let url = NSURL(string: imageURL)
+        let data = NSData(contentsOfURL: url!)
+        self.image = UIImage(data: data!)
+        self.airlineCode = airlineCode
     }
 }

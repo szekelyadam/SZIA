@@ -51,7 +51,9 @@ class ArrivalsViewController: UITableViewController {
         cell.flightNumberLabel.text = "\(arrivalData.departureCode) -> \(arrivalData.arrivalCode) - \(arrivalData.flightNumber)"
         cell.timeLabel.text = dateFormatter.stringFromDate(arrivalData.arrivalTime!)
         cell.infosLabel.text = arrivalData.comment
-        cell.airlineImageView.image = arrivalData.getAirline()!.logo!
+        if arrivalData.getAirline() != nil && arrivalData.getAirline()!.image != nil {
+            cell.airlineImageView.image = arrivalData.getAirline()!.image!
+        }
         
         return cell
     }
