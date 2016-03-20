@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ArrivalsViewController: UITableViewController {
     
@@ -45,90 +46,140 @@ class ArrivalsViewController: UITableViewController {
         
         let arrivalData = arrivals[indexPath.row] as Flight
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        
-        cell.flightNumberLabel.text = "\(arrivalData.departureCode) -> \(arrivalData.arrivalCode) - \(arrivalData.flightNumber)"
-        cell.timeLabel.text = dateFormatter.stringFromDate(arrivalData.arrivalTime!)
+        cell.flightNumberLabel.text = "\(arrivalData.departureCode!) -> \(arrivalData.arrivalCode!) - \(arrivalData.flightNumber!)"
+        cell.timeLabel.text = arrivalData.arrivalTime
         cell.infosLabel.text = arrivalData.comment
         if arrivalData.getAirline() != nil && arrivalData.getAirline()!.image != nil {
             cell.airlineImageView.image = arrivalData.getAirline()!.image!
+        }
+        cell.favouriteButton.tag = Int(arrivalData.id)
+        
+        if arrivalData.managedObjectContext != nil {
+            cell.favouriteButton.setTitle("★", forState: .Normal)
+        } else {
+            cell.favouriteButton.setTitle("☆", forState: .Normal)
         }
         
         return cell
     }
     
+    @IBAction func favouriteButtonTapped(sender: UIButton) {
+        for arrival in self.arrivals {
+            if arrival.id == Int32(sender.tag) {
+                do {
+                    let context = AppDelegate.sharedAppDelegate().managedObjectContext
+                    if arrival.managedObjectContext != nil {
+                        context.deleteObject(arrival)
+                        try context.save()
+                        sender.setTitle("☆", forState: .Normal)
+                    } else {
+                        let tmpFlight = Flight(
+                            flightNumber: arrival.flightNumber!,
+                            departure: arrival.departure!,
+                            arrival: arrival.arrival!,
+                            departureCity: arrival.departureCity!,
+                            departureCode: arrival.departureCode!,
+                            arrivalCity: arrival.arrivalCity!,
+                            arrivalCode: arrival.arrivalCode!,
+                            departureTime: arrival.departureTime!,
+                            arrivalTime: arrival.arrivalTime!,
+                            status: arrival.status!,
+                            checkinDeskNumber: arrival.checkinDeskNumber,
+                            gateNumber: arrival.gateNumber,
+                            delay: arrival.delay,
+                            comment: arrival.comment!,
+                            id: arrival.id,
+                            airlineId: 1,
+                            needSave: true,
+                            context: context
+                        )
+                        context.deleteObject(arrival)
+                        try tmpFlight.managedObjectContext?.save()
+                        sender.setTitle("★", forState: .Normal)
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
+
+    
     func loadArrivals() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        self.arrivals.removeAll()
+        var storedArrivalsIds = [Int32]()
+        var storedArrivals = [Flight]()
+        
+        let context = AppDelegate.sharedAppDelegate().managedObjectContext
+        let fetchRequest = NSFetchRequest()
+        let entityDescription = NSEntityDescription.entityForName("Flight", inManagedObjectContext: context)
+        fetchRequest.entity = entityDescription
+        
+        do {
+            let savedArrivals = try context.executeFetchRequest(fetchRequest)
+            for a in savedArrivals {
+                if a.arrivalCode! == "SZU" {
+                    arrivals.append(a as! Flight)
+                    storedArrivals.append(a as! Flight)
+                    storedArrivalsIds.append(a.id)
+                }
+            }
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        
         let url = NSURL(string: "http://szia-backend.herokuapp.com/api/flights")
-        let dataTask = urlSession.dataTaskWithURL(url!, completionHandler: {
-            data, response, error in
+        let dataTask = urlSession.dataTaskWithURL(url!, completionHandler: { data, response, error in
             
             do {
-                self.arrivals.removeAll()
-                guard let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!,
-                    options: NSJSONReadingOptions(rawValue: 0)) as? [AnyObject] else {
-                    return
-                }
-                for object in jsonArray {
-                    let d = object as! [NSObject: AnyObject]
-                    if d["arrivalCode"] as! String == "SZU" {
-                        let flight = Flight(flightNumber: d["flightNumber"] as! String, departure: d["departure"] as! String, arrival: d["arrival"] as! String, departureCity: d["departureCity"] as! String, departureCode: d["departureCode"] as! String, arrivalCity: d["arrivalCity"] as! String, arrivalCode: d["arrivalCode"] as! String, departureTime: d["departureTime"] as! String, arrivalTime: d["arrivalTime"] as! String, status: d["status"] as! String, checkinDeskNumber: d["checkinDeskNumber"] as! Int, gateNumber: d["gateNumber"] as! Int, delay: d["delay"] as! Int, comment: d["comment"] as! String, id: 1, airlineId: 1)
-                        self.arrivals.append(flight)
+                if data != nil {
+                    self.arrivals.removeAll()
+                    guard let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)) as? [AnyObject] else {
+                        return
+                    }
+                    self.arrivals.appendContentsOf(storedArrivals)
+                    for object in jsonArray {
+                        let a = object as! [NSObject: AnyObject]
+                        if a["arrivalCode"] as! String == "SZU" && !storedArrivalsIds.contains(Int32(a["id"] as! Int)) {
+                            let newFlight = Flight(
+                                flightNumber: a["flightNumber"] as! String,
+                                departure: a["departure"] as! String,
+                                arrival: a["arrival"] as! String,
+                                departureCity: a["departureCity"] as! String,
+                                departureCode: a["departureCode"] as! String,
+                                arrivalCity: a["arrivalCity"] as! String,
+                                arrivalCode: a["arrivalCode"] as! String,
+                                departureTime: a["departureTime"] as! String,
+                                arrivalTime: a["arrivalTime"] as! String,
+                                status: a["status"] as! String,
+                                checkinDeskNumber: Int32(a["checkinDeskNumber"] as! Int),
+                                gateNumber: Int32(a["gateNumber"] as! Int),
+                                delay: Int32(a["delay"] as! Int),
+                                comment: a["comment"] as! String,
+                                id: Int32(a["id"] as! Int) ,
+                                airlineId: 1,
+                                needSave: false,
+                                context: context
+                            )
+                            self.arrivals.append(newFlight)
+                        }
                     }
                 }
                 self.tableView.reloadData()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             } catch {
-                        print("Error \(error)")
+                print("Error \(error)")
             }
-            })
+        })
+        self.tableView.reloadData()
         dataTask.resume()
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    @IBAction func refreshButtonTapped(sender: UIButton) {
+        loadArrivals()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

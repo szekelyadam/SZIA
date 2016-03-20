@@ -2,31 +2,29 @@
 //  Flight.swift
 //  SZIA
 //
-//  Created by Ádibádi on 27/02/16.
+//  Created by Ádibádi on 19/03/16.
 //  Copyright © 2016 Székely Ádám. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import CoreData
 
-class Flight: NSObject {
-    var flightNumber: String
-    var departure: String
-    var arrival: String
-    var departureCity: String
-    var departureCode: String
-    var arrivalCity: String
-    var arrivalCode: String
-    var departureTime: NSDate?
-    var arrivalTime: NSDate?
-    var status: String
-    var checkinDeskNumber: Int
-    var gateNumber: Int
-    var delay: Int
-    var comment: String
-    var id: Int
-    var airlineId: Int
+@objc(Flight)
+class Flight: NSManagedObject {
     
-    init(flightNumber: String, departure: String, arrival: String, departureCity: String, departureCode: String, arrivalCity: String, arrivalCode: String, departureTime: String, arrivalTime: String, status: String, checkinDeskNumber: Int, gateNumber: Int, delay: Int, comment: String, id: Int, airlineId: Int) {
+    convenience init(flightNumber: String, departure: String, arrival: String, departureCity: String, departureCode: String, arrivalCity: String, arrivalCode: String, departureTime: String, arrivalTime: String, status: String, checkinDeskNumber: Int32, gateNumber: Int32, delay: Int32, comment: String, id: Int32, airlineId: Int32, needSave: Bool,  context: NSManagedObjectContext?) {
+        
+        // Create the NSEntityDescription
+        let entity = NSEntityDescription.entityForName("Flight", inManagedObjectContext: context!)
+        
+        
+        if(!needSave) {
+            self.init(entity: entity!, insertIntoManagedObjectContext: nil)
+        } else {
+            self.init(entity: entity!, insertIntoManagedObjectContext: context)
+        }
+        
+        // Init class variables
         self.flightNumber = flightNumber
         self.departure = departure
         self.arrival = arrival
@@ -41,12 +39,8 @@ class Flight: NSObject {
         self.comment = comment
         self.id = id
         self.airlineId = airlineId
-        
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        self.departureTime = dateFormatter.dateFromString(departureTime)
-        self.arrivalTime = dateFormatter.dateFromString(arrivalTime)
+        self.departureTime = departureTime
+        self.arrivalTime = arrivalTime
     }
     
     func getAirline() -> Airline? {
@@ -60,4 +54,5 @@ class Flight: NSObject {
         
         return nil
     }
+
 }

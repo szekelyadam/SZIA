@@ -100,6 +100,9 @@
                                                     <include reference="5nQ-Un-iIt"/>
                                                 </mask>
                                             </variation>
+                                            <connections>
+                                                <action selector="favouriteButtonTapped:" destination="RXS-DP-eAH" eventType="touchUpInside" id="RVN-eD-vsI"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -128,6 +131,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="airlineImageView" destination="EJ0-HW-CGd" id="qZK-bW-44p"/>
+                                    <outlet property="favouriteButton" destination="1C0-Yw-h2h" id="2Q4-Bf-9bJ"/>
                                     <outlet property="flightNumberLabel" destination="lPf-Vy-L7g" id="EoJ-OL-aSo"/>
                                     <outlet property="infosLabel" destination="YMl-n6-069" id="sQn-zK-Nrf"/>
                                     <outlet property="timeLabel" destination="xZk-jJ-f20" id="SKC-c5-Fs4"/>
@@ -191,13 +195,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontos indulás és kapuzárás" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYJ-DF-BcB">
-                                            <rect key="frame" x="78" y="32" width="464" height="21"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="timeLabel"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Járat neve és száma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEU-H6-Scb">
                                             <rect key="frame" x="78" y="8" width="185" height="23"/>
                                             <accessibility key="accessibilityConfiguration" identifier="flightNumberLabel"/>
@@ -252,7 +249,17 @@
                                                     <include reference="5XF-oY-bzM"/>
                                                 </mask>
                                             </variation>
+                                            <connections>
+                                                <action selector="favouriteButtonTapped:" destination="VoR-AQ-V5F" eventType="touchUpInside" id="bHA-v9-OUT"/>
+                                            </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pontos indulás és kapuzárás" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYJ-DF-BcB">
+                                            <rect key="frame" x="78" y="29" width="464" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="timeLabel"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="3MG-eP-6GS" firstAttribute="leading" secondItem="dYJ-DF-BcB" secondAttribute="trailing" constant="10" id="9nf-gT-X9C"/>
@@ -272,6 +279,7 @@
                                 <accessibility key="accessibilityConfiguration" identifier="ArrivalsTableViewCell"/>
                                 <connections>
                                     <outlet property="airlineImageView" destination="3v6-RC-RK4" id="GP6-SF-jsz"/>
+                                    <outlet property="favouriteButton" destination="3MG-eP-6GS" id="Nqb-8S-bIj"/>
                                     <outlet property="flightNumberLabel" destination="kEU-H6-Scb" id="dGt-vO-iaH"/>
                                     <outlet property="infosLabel" destination="2ur-w7-5Lq" id="ZOh-JJ-rUh"/>
                                     <outlet property="timeLabel" destination="dYJ-DF-BcB" id="Ud7-uF-unx"/>
@@ -291,6 +299,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="Frissítés"/>
+                                <connections>
+                                    <action selector="refreshButtonTapped:" destination="VoR-AQ-V5F" eventType="touchUpInside" id="4ts-sA-UGT"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

@@ -33,7 +33,7 @@ class DataManager: NSObject {
                     }
                     for object in jsonArray {
                         let d = object as! [NSObject: AnyObject]
-                        let airline = Airline(id: d["id"] as! Int, name: d["name"] as! String, imageURL: d["imageURL"] as! String, airlineCode: d["airlineCode"] as! String)
+                        let airline = Airline(id: d["id"] as! Int32, name: d["name"] as! String, imageURL: d["imageURL"] as! String, airlineCode: d["airlineCode"] as! String)
                         self.airlines.append(airline)
                     }
                 } catch {

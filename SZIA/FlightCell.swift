@@ -14,6 +14,7 @@ class FlightCell: UITableViewCell {
     @IBOutlet var flightNumberLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var infosLabel: UILabel!
+    @IBOutlet weak var favouriteButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

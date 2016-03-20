@@ -17,7 +17,6 @@
 		C48AD80B1C825843000A39D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48AD8091C825843000A39D4 /* LaunchScreen.storyboard */; };
 		C48AD8161C825C22000A39D4 /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8151C825C22000A39D4 /* Airline.swift */; };
 		C48AD8181C825DD2000A39D4 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8171C825DD2000A39D4 /* News.swift */; };
-		C48AD81B1C825F32000A39D4 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD81A1C825F32000A39D4 /* Flight.swift */; };
 		C48AD81D1C826288000A39D4 /* Complaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD81C1C826288000A39D4 /* Complaint.swift */; };
 		C48AD8211C8266EC000A39D4 /* DeparturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8201C8266EC000A39D4 /* DeparturesViewController.swift */; };
 		C48AD8231C826C2B000A39D4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8221C826C2B000A39D4 /* DataManager.swift */; };
@@ -27,6 +26,9 @@
 		C48AD8321C832D78000A39D4 /* ArrivalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8311C832D78000A39D4 /* ArrivalsViewController.swift */; };
 		C48AD8341C8333C4000A39D4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8331C8333C4000A39D4 /* NewsViewController.swift */; };
 		C48AD8361C833BED000A39D4 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AD8351C833BED000A39D4 /* NewsDetailsViewController.swift */; };
+		C4B45A5C1C9DEBBF00170A83 /* SZIA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B45A5A1C9DEBBF00170A83 /* SZIA.xcdatamodeld */; };
+		C4B45A721C9DFD8A00170A83 /* Flight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B45A701C9DFD8A00170A83 /* Flight+CoreDataProperties.swift */; };
+		C4B45A731C9DFD8A00170A83 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B45A711C9DFD8A00170A83 /* Flight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +44,6 @@
 		C48AD80C1C825843000A39D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C48AD8151C825C22000A39D4 /* Airline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
 		C48AD8171C825DD2000A39D4 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
-		C48AD81A1C825F32000A39D4 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		C48AD81C1C826288000A39D4 /* Complaint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Complaint.swift; sourceTree = "<group>"; };
 		C48AD8201C8266EC000A39D4 /* DeparturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesViewController.swift; sourceTree = "<group>"; };
 		C48AD8221C826C2B000A39D4 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -52,6 +53,9 @@
 		C48AD8311C832D78000A39D4 /* ArrivalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsViewController.swift; sourceTree = "<group>"; };
 		C48AD8331C8333C4000A39D4 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		C48AD8351C833BED000A39D4 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
+		C4B45A5B1C9DEBBF00170A83 /* SZIA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SZIA.xcdatamodel; sourceTree = "<group>"; };
+		C4B45A701C9DFD8A00170A83 /* Flight+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Flight+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4B45A711C9DFD8A00170A83 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +96,9 @@
 				C48AD8091C825843000A39D4 /* LaunchScreen.storyboard */,
 				C48AD80C1C825843000A39D4 /* Info.plist */,
 				C48AD8151C825C22000A39D4 /* Airline.swift */,
+				C4B45A701C9DFD8A00170A83 /* Flight+CoreDataProperties.swift */,
+				C4B45A711C9DFD8A00170A83 /* Flight.swift */,
 				C48AD8171C825DD2000A39D4 /* News.swift */,
-				C48AD81A1C825F32000A39D4 /* Flight.swift */,
 				C48AD81C1C826288000A39D4 /* Complaint.swift */,
 				C48AD8201C8266EC000A39D4 /* DeparturesViewController.swift */,
 				C48AD8221C826C2B000A39D4 /* DataManager.swift */,
@@ -104,6 +109,7 @@
 				C46FA26C1C8CA6B0003CC541 /* MapViewController.swift */,
 				C46FA26E1C8CAA33003CC541 /* AirportAnnotation.swift */,
 				C46FA2701C8CB763003CC541 /* ComplaintViewController.swift */,
+				C4B45A5A1C9DEBBF00170A83 /* SZIA.xcdatamodeld */,
 			);
 			path = SZIA;
 			sourceTree = "<group>";
@@ -190,8 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B45A5C1C9DEBBF00170A83 /* SZIA.xcdatamodeld in Sources */,
 				C48AD8361C833BED000A39D4 /* NewsDetailsViewController.swift in Sources */,
 				C48AD8161C825C22000A39D4 /* Airline.swift in Sources */,
+				C4B45A721C9DFD8A00170A83 /* Flight+CoreDataProperties.swift in Sources */,
 				C48AD8251C831BA0000A39D4 /* FlightCell.swift in Sources */,
 				C48AD8231C826C2B000A39D4 /* DataManager.swift in Sources */,
 				C46FA2711C8CB763003CC541 /* ComplaintViewController.swift in Sources */,
@@ -199,10 +207,10 @@
 				C48AD81D1C826288000A39D4 /* Complaint.swift in Sources */,
 				C48AD8341C8333C4000A39D4 /* NewsViewController.swift in Sources */,
 				C46FA26D1C8CA6B0003CC541 /* MapViewController.swift in Sources */,
+				C4B45A731C9DFD8A00170A83 /* Flight.swift in Sources */,
 				C48AD8321C832D78000A39D4 /* ArrivalsViewController.swift in Sources */,
 				C48AD8031C825843000A39D4 /* ViewController.swift in Sources */,
 				C48AD8181C825DD2000A39D4 /* News.swift in Sources */,
-				C48AD81B1C825F32000A39D4 /* Flight.swift in Sources */,
 				C48AD8211C8266EC000A39D4 /* DeparturesViewController.swift in Sources */,
 				C48AD8011C825843000A39D4 /* AppDelegate.swift in Sources */,
 			);
@@ -315,10 +323,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SZIA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.szekelyadam.SZIA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -326,10 +337,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SZIA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.szekelyadam.SZIA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -355,6 +368,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C4B45A5A1C9DEBBF00170A83 /* SZIA.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4B45A5B1C9DEBBF00170A83 /* SZIA.xcdatamodel */,
+			);
+			currentVersion = C4B45A5B1C9DEBBF00170A83 /* SZIA.xcdatamodel */;
+			path = SZIA.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C48AD7F51C825843000A39D4 /* Project object */;
 }
