@@ -49,8 +49,8 @@ class ArrivalsViewController: UITableViewController {
         cell.flightNumberLabel.text = "\(arrivalData.departureCode!) -> \(arrivalData.arrivalCode!) - \(arrivalData.flightNumber!)"
         cell.timeLabel.text = arrivalData.arrivalTime
         cell.infosLabel.text = arrivalData.comment
-        if arrivalData.getAirline() != nil && arrivalData.getAirline()!.image != nil {
-            cell.airlineImageView.image = arrivalData.getAirline()!.image!
+        if arrivalData.getAirline() != nil && arrivalData.getAirline()!.imageURL != "" {
+            cell.airlineImageView.kf_setImageWithURL(NSURL(string: arrivalData.getAirline()!.imageURL)!)
         }
         cell.favouriteButton.tag = Int(arrivalData.id)
         
@@ -160,7 +160,7 @@ class ArrivalsViewController: UITableViewController {
                                 delay: Int32(a["delay"] as! Int),
                                 comment: a["comment"] as! String,
                                 id: Int32(a["id"] as! Int) ,
-                                airlineId: 1,
+                                airlineId: a["airlineId"],
                                 needSave: false,
                                 context: context
                             )

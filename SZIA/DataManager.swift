@@ -10,12 +10,10 @@ import UIKit
 
 class DataManager: NSObject {
     
-    var airlines: [Airline]
+    var airlines = [Airline]()
     var urlSession: NSURLSession!
     
     override init() {
-        airlines = [Airline]()
-        
         let url = NSURL(string: "http://szia-backend.herokuapp.com/api/airlines")
         let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         urlSession = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
@@ -33,8 +31,11 @@ class DataManager: NSObject {
                     }
                     for object in jsonArray {
                         let d = object as! [NSObject: AnyObject]
-                        let airline = Airline(id: d["id"] as! Int32, name: d["name"] as! String, imageURL: d["imageURL"] as! String, airlineCode: d["airlineCode"] as! String)
-                        self.airlines.append(airline)
+                        print(d)
+                        if d["id"] != nil && d["name"] != nil && d["imageUrl"] != nil && d["airlineCode"] != nil {
+                            let airline = Airline(id: Int32(d["id"] as! Int), name: d["name"] as! String, imageURL: d["imageUrl"] as! String, airlineCode: d["airlineCode"] as! String)
+                            self.airlines.append(airline)
+                        }
                     }
                 } catch {
                     print("Error \(error)")

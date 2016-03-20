@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181964685C2E113683458885 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0528E916C16EC300FBE962B /* Pods.framework */; };
 		C46FA26D1C8CA6B0003CC541 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46FA26C1C8CA6B0003CC541 /* MapViewController.swift */; };
 		C46FA26F1C8CAA33003CC541 /* AirportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46FA26E1C8CAA33003CC541 /* AirportAnnotation.swift */; };
 		C46FA2711C8CB763003CC541 /* ComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46FA2701C8CB763003CC541 /* ComplaintViewController.swift */; };
@@ -29,9 +30,11 @@
 		C4B45A5C1C9DEBBF00170A83 /* SZIA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B45A5A1C9DEBBF00170A83 /* SZIA.xcdatamodeld */; };
 		C4B45A721C9DFD8A00170A83 /* Flight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B45A701C9DFD8A00170A83 /* Flight+CoreDataProperties.swift */; };
 		C4B45A731C9DFD8A00170A83 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B45A711C9DFD8A00170A83 /* Flight.swift */; };
+		C4C1B5701C9F18EC0094427A /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1B56F1C9F18EC0094427A /* TabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C0528E916C16EC300FBE962B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46FA26C1C8CA6B0003CC541 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C46FA26E1C8CAA33003CC541 /* AirportAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportAnnotation.swift; sourceTree = "<group>"; };
 		C46FA2701C8CB763003CC541 /* ComplaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +59,9 @@
 		C4B45A5B1C9DEBBF00170A83 /* SZIA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SZIA.xcdatamodel; sourceTree = "<group>"; };
 		C4B45A701C9DFD8A00170A83 /* Flight+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Flight+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C4B45A711C9DFD8A00170A83 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		C4C1B56F1C9F18EC0094427A /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		CA157910E764D7D367F8B4C1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F552B12F8B698B97933A5A1B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +69,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181964685C2E113683458885 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09B6EDE5F02FB048A7FF445A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0528E916C16EC300FBE962B /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C48AD7F41C825843000A39D4 = {
 			isa = PBXGroup;
 			children = (
 				C48AD7FF1C825843000A39D4 /* SZIA */,
 				C48AD7FE1C825843000A39D4 /* Products */,
+				CB7234D1A1D4B49DD0EC89ED /* Pods */,
+				09B6EDE5F02FB048A7FF445A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +127,7 @@
 				C46FA26E1C8CAA33003CC541 /* AirportAnnotation.swift */,
 				C46FA2701C8CB763003CC541 /* ComplaintViewController.swift */,
 				C4B45A5A1C9DEBBF00170A83 /* SZIA.xcdatamodeld */,
+				C4C1B56F1C9F18EC0094427A /* TabController.swift */,
 			);
 			path = SZIA;
 			sourceTree = "<group>";
@@ -123,6 +141,15 @@
 			name = AirlineImages;
 			sourceTree = "<group>";
 		};
+		CB7234D1A1D4B49DD0EC89ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA157910E764D7D367F8B4C1 /* Pods.debug.xcconfig */,
+				F552B12F8B698B97933A5A1B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C48AD80F1C825843000A39D4 /* Build configuration list for PBXNativeTarget "SZIA" */;
 			buildPhases = (
+				FA6DCB6D7F2A08E36FB83B51 /* Check Pods Manifest.lock */,
 				C48AD7F91C825843000A39D4 /* Sources */,
 				C48AD7FA1C825843000A39D4 /* Frameworks */,
 				C48AD7FB1C825843000A39D4 /* Resources */,
+				1C18C9E422E2AB697259B4B9 /* Embed Pods Frameworks */,
+				A89825BAE22D9BFE5F2FFD08 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,6 +221,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C18C9E422E2AB697259B4B9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A89825BAE22D9BFE5F2FFD08 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA6DCB6D7F2A08E36FB83B51 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C48AD7F91C825843000A39D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -203,6 +281,7 @@
 				C48AD8251C831BA0000A39D4 /* FlightCell.swift in Sources */,
 				C48AD8231C826C2B000A39D4 /* DataManager.swift in Sources */,
 				C46FA2711C8CB763003CC541 /* ComplaintViewController.swift in Sources */,
+				C4C1B5701C9F18EC0094427A /* TabController.swift in Sources */,
 				C46FA26F1C8CAA33003CC541 /* AirportAnnotation.swift in Sources */,
 				C48AD81D1C826288000A39D4 /* Complaint.swift in Sources */,
 				C48AD8341C8333C4000A39D4 /* NewsViewController.swift in Sources */,
@@ -321,6 +400,7 @@
 		};
 		C48AD8101C825843000A39D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA157910E764D7D367F8B4C1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -335,6 +415,7 @@
 		};
 		C48AD8111C825843000A39D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F552B12F8B698B97933A5A1B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

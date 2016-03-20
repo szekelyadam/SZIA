@@ -145,7 +145,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Induló járatok" id="4i6-QE-vha"/>
                     <navigationItem key="navigationItem" title="Induló járatok" id="yfU-JW-Oqv">
-                        <barButtonItem key="rightBarButtonItem" width="82" style="plain" id="L0o-RB-Jl9">
+                        <barButtonItem key="rightBarButtonItem" width="82" id="L0o-RB-Jl9">
                             <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZiC-uh-ii6">
                                 <rect key="frame" x="534" y="7" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -253,8 +253,8 @@
                                                 <action selector="favouriteButtonTapped:" destination="VoR-AQ-V5F" eventType="touchUpInside" id="bHA-v9-OUT"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pontos indulás és kapuzárás" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYJ-DF-BcB">
-                                            <rect key="frame" x="78" y="29" width="464" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontos indulás és kapuzárás" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYJ-DF-BcB">
+                                            <rect key="frame" x="78" y="32" width="464" height="21"/>
                                             <accessibility key="accessibilityConfiguration" identifier="timeLabel"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -293,7 +293,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Érkező járatok" id="htQ-i3-aE1"/>
                     <navigationItem key="navigationItem" title="Érkező járatok" id="4Ka-NZ-sU7">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Q0l-Ay-69d">
+                        <barButtonItem key="rightBarButtonItem" id="Q0l-Ay-69d">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Giy-mA-5Dp">
                                 <rect key="frame" x="534" y="7" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -366,7 +366,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="z3Q-Vn-F4C" kind="push" identifier="NewsDetailsSegue" id="AqS-5L-4F3"/>
+                                    <segue destination="z3Q-Vn-F4C" kind="show" identifier="NewsDetailsSegue" id="AqS-5L-4F3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -545,17 +545,8 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Panasz bejelentés" id="Ccx-yZ-klN">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="0UW-1P-EFf">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gmP-Yj-W2x">
-                                <rect key="frame" x="20" y="7" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Fénykép"/>
-                                <connections>
-                                    <action selector="uploadComplaintImageButtonTapped:" destination="Kdg-fK-qU4" eventType="touchUpInside" id="DMU-dI-rvk"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="7Vm-B8-hhe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="0UW-1P-EFf"/>
+                        <barButtonItem key="rightBarButtonItem" id="7Vm-B8-hhe">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AZ3-Nm-njL">
                                 <rect key="frame" x="533" y="7" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -644,16 +635,17 @@
             </objects>
             <point key="canvasLocation" x="2548" y="1763"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Controller-->
         <scene sceneID="4eX-S8-hyt">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9co-v1-Cds" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9co-v1-Cds" customClass="TabController" customModule="SZIA" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rGC-zU-Cco">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabs" destination="rGC-zU-Cco" id="m60-K1-8IA"/>
                         <segue destination="nuo-XF-Dot" kind="relationship" relationship="viewControllers" id="4mY-jt-iz0"/>
                         <segue destination="4TA-SQ-ROs" kind="relationship" relationship="viewControllers" id="UhC-jr-Sgh"/>
                         <segue destination="byL-i4-gxZ" kind="relationship" relationship="viewControllers" id="gX2-sT-Lqq"/>

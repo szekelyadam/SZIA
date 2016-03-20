@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import FontAwesome_swift
+import Kingfisher
 
 class DeparturesViewController: UITableViewController {
     
@@ -19,6 +21,8 @@ class DeparturesViewController: UITableViewController {
         let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         urlSession = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
         self.loadDepartures()
+        self.tabBarItem.image = UIImage.fontAwesomeIconWithName(.Github, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -94,8 +98,8 @@ class DeparturesViewController: UITableViewController {
         cell.flightNumberLabel.text = "\(departureData.departureCode!) -> \(departureData.arrivalCode!) - \(departureData.flightNumber!)"
         cell.timeLabel.text = departureData.departureTime
         cell.infosLabel.text = departureData.comment
-        if departureData.getAirline() != nil && departureData.getAirline()!.image != nil {
-            cell.airlineImageView.image = departureData.getAirline()!.image!
+        if departureData.getAirline() != nil && departureData.getAirline()!.imageURL != "" {
+            cell.airlineImageView.kf_setImageWithURL(NSURL(string: departureData.getAirline()!.imageURL)!)
         }
         cell.favouriteButton.tag = Int(departureData.id)
         
@@ -162,8 +166,8 @@ class DeparturesViewController: UITableViewController {
                                 gateNumber: Int32(d["gateNumber"] as! Int),
                                 delay: Int32(d["delay"] as! Int),
                                 comment: d["comment"] as! String,
-                                id: Int32(d["id"] as! Int) ,
-                                airlineId: 1,
+                                id: Int32(d["id"] as! Int),
+                                airlineId: d["airlineId"],
                                 needSave: false,
                                 context: context
                             )

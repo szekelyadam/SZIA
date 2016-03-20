@@ -12,7 +12,7 @@ import CoreData
 @objc(Flight)
 class Flight: NSManagedObject {
     
-    convenience init(flightNumber: String, departure: String, arrival: String, departureCity: String, departureCode: String, arrivalCity: String, arrivalCode: String, departureTime: String, arrivalTime: String, status: String, checkinDeskNumber: Int32, gateNumber: Int32, delay: Int32, comment: String, id: Int32, airlineId: Int32, needSave: Bool,  context: NSManagedObjectContext?) {
+    convenience init(flightNumber: String, departure: String, arrival: String, departureCity: String, departureCode: String, arrivalCity: String, arrivalCode: String, departureTime: String, arrivalTime: String, status: String, checkinDeskNumber: Int32, gateNumber: Int32, delay: Int32, comment: String, id: Int32, airlineId: AnyObject?, needSave: Bool, context: NSManagedObjectContext?) {
         
         // Create the NSEntityDescription
         let entity = NSEntityDescription.entityForName("Flight", inManagedObjectContext: context!)
@@ -38,7 +38,9 @@ class Flight: NSManagedObject {
         self.delay = delay
         self.comment = comment
         self.id = id
-        self.airlineId = airlineId
+        if airlineId != nil {
+            self.airlineId = Int32(airlineId as! Int)
+        }
         self.departureTime = departureTime
         self.arrivalTime = arrivalTime
     }
@@ -47,6 +49,7 @@ class Flight: NSManagedObject {
         let dataManager = AppDelegate.sharedAppDelegate().dataManager
         
         for airline in dataManager.airlines {
+            print("airline: \(airline)")
             if airline.id == self.airlineId {
                 return airline
             }

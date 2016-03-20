@@ -19,9 +19,6 @@ class Airline: NSObject {
         self.id = id
         self.name = name
         self.imageURL = imageURL
-        let url = NSURL(string: imageURL)
-        let data = NSData(contentsOfURL: url!)
-        self.image = UIImage(data: data!)
         self.airlineCode = airlineCode
     }
 }
